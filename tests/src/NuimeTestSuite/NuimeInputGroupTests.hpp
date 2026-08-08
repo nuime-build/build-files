@@ -17,6 +17,7 @@ private:
     static void HasLabelTest1(Ishiko::Test& test);
     static void SetBaseTest1(Ishiko::Test& test);
     static void AddInputTest1(Ishiko::Test& test);
+    static void AddPropertyTest1(Ishiko::Test& test);
 };
 
 #endif
