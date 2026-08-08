@@ -8,6 +8,8 @@
 #include "NuimeTestSuite/NuimeLabelTests.hpp"
 #include "NuimeTestSuite/NuimeOutputTests.hpp"
 #include "NuimeTestSuite/NuimeOutputGroupTests.hpp"
+#include "NuimeTestSuite/NuimePropertyTests.hpp"
+#include "NuimeTestSuite/NuimePropertySetTests.hpp"
 #include "NuimeTestSuite/NuimeRecipeTests.hpp"
 #include "NuimeTestSuite/NuimeTargetTests.hpp"
 
@@ -15,6 +17,8 @@ NuimeTestSuite::NuimeTestSuite(const Ishiko::TestNumber& number, const Ishiko::T
     : Ishiko::TestSequence(number, "Nuime test suite", context)
 {
     append<NuimeLabelTests>();
+    append<NuimePropertyTests>();
+    append<NuimePropertySetTests>();
     append<NuimeInputTests>();
     append<NuimeInputGroupTests>();
     append<NuimeOutputTests>();

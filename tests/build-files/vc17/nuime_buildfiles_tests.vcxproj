@@ -181,6 +181,8 @@
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeLabelTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeOutputTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeOutputGroupTests.cpp" />
+    <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertyTests.cpp" />
+    <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeTargetTests.cpp" />
   </ItemGroup>
@@ -205,6 +207,8 @@
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeLabelTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeOutputTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeOutputGroupTests.hpp" />
+    <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertyTests.hpp" />
+    <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeTargetTests.hpp" />
   </ItemGroup>

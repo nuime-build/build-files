@@ -77,6 +77,12 @@
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeOutputGroupTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertyTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -146,6 +152,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeOutputGroupTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertyTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.cpp">

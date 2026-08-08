@@ -71,6 +71,12 @@
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeOutputGroup.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeProperty.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimePropertySet.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeRecipe.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -125,6 +131,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Nuime\NuimeOutputGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Nuime\NuimeProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Nuime\NuimePropertySet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Nuime\NuimeWellKnownLabels.cpp">
