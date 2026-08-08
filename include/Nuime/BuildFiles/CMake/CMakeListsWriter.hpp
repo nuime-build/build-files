@@ -21,9 +21,12 @@ namespace Nuime
         void writeAddLibraryCommand(const std::string& library_name, const std::vector<std::string>& source_files);
         void writeAddExecutableCommand(const std::string& executable_name,
             const std::vector<std::string>& source_files);
+        void writeTargetIncludeDirectoriesCommand(const std::string& target_name, const std::string& scope,
+            const std::vector<std::string>& directories);
         void writeCMakeMinimumRequiredCommand(const std::string& version);
         void writeProjectCommand(const std::string& project_name);
         void writeSetCommand(const std::string& variable_name, const std::vector<std::string>& values);
+        void writeBlankLine();
 
     private:
         Ishiko::TextFile m_output_file;

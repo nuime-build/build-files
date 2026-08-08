@@ -58,6 +58,29 @@ void CMakeListsWriter::writeAddExecutableCommand(const std::string& executable_n
     }
 }
 
+void CMakeListsWriter::writeTargetIncludeDirectoriesCommand(const std::string& target_name,
+    const std::string& scope, const std::vector<std::string>& directories)
+{
+    m_output_file.write("target_include_directories(");
+    m_output_file.write(target_name);
+    m_output_file.write(" ");
+    m_output_file.write(scope);
+    if (directories.empty())
+    {
+        m_output_file.writeLine(")");
+    }
+    else
+    {
+        m_output_file.writeLine("");
+        for (const std::string& directory : directories)
+        {
+            m_output_file.write("    ");
+            m_output_file.writeLine(directory);
+        }
+        m_output_file.writeLine(")");
+    }
+}
+
 void CMakeListsWriter::writeCMakeMinimumRequiredCommand(const std::string& version)
 {
     m_output_file.write("cmake_minimum_required(VERSION ");
@@ -83,4 +106,9 @@ void CMakeListsWriter::writeSetCommand(const std::string& variable_name, const s
         m_output_file.write(value);
     }
     m_output_file.writeLine(")");
+}
+
+void CMakeListsWriter::writeBlankLine()
+{
+    m_output_file.writeLine("");
 }
