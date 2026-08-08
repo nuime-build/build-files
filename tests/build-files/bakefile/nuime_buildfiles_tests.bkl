@@ -48,6 +48,7 @@ program nuime_buildfiles_tests : NuimeBuildFiles, IshikoTestFramework
         ../../src/NuimeTestSuite/NuimeLabelTests.hpp
         ../../src/NuimeTestSuite/NuimeOutputTests.hpp
         ../../src/NuimeTestSuite/NuimeOutputGroupTests.hpp
+        ../../src/NuimeTestSuite/NuimePropertyTests.hpp
         ../../src/NuimeTestSuite/NuimeRecipeTests.hpp
         ../../src/NuimeTestSuite/NuimeTargetTests.hpp
     }
@@ -76,6 +77,7 @@ program nuime_buildfiles_tests : NuimeBuildFiles, IshikoTestFramework
         ../../src/NuimeTestSuite/NuimeLabelTests.cpp
         ../../src/NuimeTestSuite/NuimeOutputTests.cpp
         ../../src/NuimeTestSuite/NuimeOutputGroupTests.cpp
+        ../../src/NuimeTestSuite/NuimePropertyTests.cpp
         ../../src/NuimeTestSuite/NuimeRecipeTests.cpp
         ../../src/NuimeTestSuite/NuimeTargetTests.cpp
     }
