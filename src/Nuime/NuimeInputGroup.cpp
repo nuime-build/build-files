@@ -46,3 +46,13 @@ void NuimeInputGroup::addInput(const NuimeInput& input)
 {
     m_inputs.push_back(input);
 }
+
+const NuimePropertySet& NuimeInputGroup::properties() const
+{
+    return m_properties;
+}
+
+NuimePropertySet& NuimeInputGroup::properties()
+{
+    return m_properties;
+}

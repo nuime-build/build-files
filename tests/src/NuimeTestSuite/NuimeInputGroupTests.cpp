@@ -14,6 +14,7 @@ NuimeInputGroupTests::NuimeInputGroupTests(const Ishiko::TestNumber& number, con
     append<Ishiko::HeapAllocationErrorsTest>("hasLabel test 1", HasLabelTest1);
     append<Ishiko::HeapAllocationErrorsTest>("setBase test 1", SetBaseTest1);
     append<Ishiko::HeapAllocationErrorsTest>("addInput test 1", AddInputTest1);
+    append<Ishiko::HeapAllocationErrorsTest>("addProperty test 1", AddPropertyTest1);
 }
 
 void NuimeInputGroupTests::ConstructorTest1(Ishiko::Test& test)
@@ -23,6 +24,7 @@ void NuimeInputGroupTests::ConstructorTest1(Ishiko::Test& test)
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.labels().size(), 0);
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.base(), "");
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.inputs().size(), 0);
+    ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties().size(), 0);
     ISHIKO_TEST_PASS();
 }
 
@@ -62,5 +64,16 @@ void NuimeInputGroupTests::AddInputTest1(Ishiko::Test& test)
 
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.inputs().size(), 1);
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.inputs()[0].asString(), "src/main.cpp");
+    ISHIKO_TEST_PASS();
+}
+
+void NuimeInputGroupTests::AddPropertyTest1(Ishiko::Test& test)
+{
+    NuimeInputGroup input_group;
+    input_group.properties().addProperty(NuimeProperty("nuime:code:cpp-include-directories", "../../include/Ishiko/BasePlatform"));
+
+    ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties().size(), 1);
+    ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties()[0].name(), "nuime:code:cpp-include-directories");
+    ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties()[0].value(), "../../include/Ishiko/BasePlatform");
     ISHIKO_TEST_PASS();
 }
