@@ -21,6 +21,7 @@
 #include "BuildFiles/Nuime/NuimeOutput.hpp"
 #include "BuildFiles/Nuime/NuimeOutputGroup.hpp"
 #include "BuildFiles/Nuime/NuimeProperty.hpp"
+#include "BuildFiles/Nuime/NuimePropertySet.hpp"
 #include "BuildFiles/Nuime/NuimeRecipe.hpp"
 #include "BuildFiles/Nuime/NuimeTarget.hpp"
 #include "BuildFiles/Nuime/NuimeWellKnownLabels.hpp"
