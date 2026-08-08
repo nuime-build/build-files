@@ -6,6 +6,7 @@
 
 #include "NuimeInput.hpp"
 #include "NuimeLabel.hpp"
+#include "NuimePropertySet.hpp"
 #include <string>
 #include <vector>
 
@@ -24,10 +25,14 @@ namespace Nuime
         const std::vector<NuimeInput>& inputs() const;
         void addInput(const NuimeInput& input);
 
+        const NuimePropertySet& properties() const;
+        NuimePropertySet& properties();
+
     private:
         std::vector<NuimeLabel> m_labels;
         std::string m_base;
         std::vector<NuimeInput> m_inputs;
+        NuimePropertySet m_properties;
     };
 }
 

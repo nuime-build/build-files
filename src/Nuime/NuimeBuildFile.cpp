@@ -65,6 +65,11 @@ void NuimeBuildFile::load(const boost::filesystem::path& path, Ishiko::Error& er
                 {
                     input_group.addInput(NuimeInput(input.as<std::string>()));
                 }
+                for (const auto& property_node : group_node["properties"])
+                {
+                    input_group.properties().add(NuimeProperty(property_node["name"].as<std::string>(),
+                        property_node["value"].as<std::string>()));
+                }
                 input_groups.push_back(input_group);
             }
 
