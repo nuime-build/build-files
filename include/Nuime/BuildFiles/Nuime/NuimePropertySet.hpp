@@ -14,7 +14,7 @@ namespace Nuime
     {
     public:
         const std::vector<NuimeProperty>& properties() const;
-        void addProperty(const NuimeProperty& property);
+        void add(const NuimeProperty& property);
 
     private:
         std::vector<NuimeProperty> m_properties;

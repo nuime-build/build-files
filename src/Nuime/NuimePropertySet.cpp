@@ -10,7 +10,7 @@ const std::vector<NuimeProperty>& NuimePropertySet::properties() const
     return m_properties;
 }
 
-void NuimePropertySet::addProperty(const NuimeProperty& property)
+void NuimePropertySet::add(const NuimeProperty& property)
 {
     m_properties.push_back(property);
 }

@@ -10,7 +10,7 @@ NuimePropertySetTests::NuimePropertySetTests(const Ishiko::TestNumber& number, c
     : TestSequence(number, "NuimePropertySet tests", context)
 {
     append<Ishiko::HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
-    append<Ishiko::HeapAllocationErrorsTest>("addProperty test 1", AddPropertyTest1);
+    append<Ishiko::HeapAllocationErrorsTest>("add test 1", AddTest1);
 }
 
 void NuimePropertySetTests::ConstructorTest1(Ishiko::Test& test)
@@ -21,10 +21,10 @@ void NuimePropertySetTests::ConstructorTest1(Ishiko::Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void NuimePropertySetTests::AddPropertyTest1(Ishiko::Test& test)
+void NuimePropertySetTests::AddTest1(Ishiko::Test& test)
 {
     NuimePropertySet property_set;
-    property_set.addProperty(NuimeProperty("nuime:code:cpp-include-directories", "../../include"));
+    property_set.add(NuimeProperty("nuime:code:cpp-include-directories", "../../include"));
 
     ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties().size(), 1);
     ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties()[0].name(), "nuime:code:cpp-include-directories");

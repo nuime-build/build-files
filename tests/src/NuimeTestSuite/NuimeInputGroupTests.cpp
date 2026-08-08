@@ -70,7 +70,7 @@ void NuimeInputGroupTests::AddInputTest1(Ishiko::Test& test)
 void NuimeInputGroupTests::AddPropertyTest1(Ishiko::Test& test)
 {
     NuimeInputGroup input_group;
-    input_group.properties().addProperty(NuimeProperty("nuime:code:cpp-include-directories", "../../include/Ishiko/BasePlatform"));
+    input_group.properties().add(NuimeProperty("nuime:code:cpp-include-directories", "../../include/Ishiko/BasePlatform"));
 
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties().size(), 1);
     ISHIKO_TEST_FAIL_IF_NEQ(input_group.properties().properties()[0].name(), "nuime:code:cpp-include-directories");
