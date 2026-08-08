@@ -1,0 +1,16 @@
+%YAML 1.2
+---
+nuime-version: "0.1"
+name: example
+targets:
+  - name: lib
+    input-groups:
+      - base: ../../src
+        inputs:
+          - main.cpp
+        properties:
+          - name: nuime:code:cpp-include-directories
+            value: ../../include/Ishiko/BasePlatform
+    output-groups:
+      - outputs:
+          - example
