@@ -24,10 +24,10 @@ void NuimePropertySetTests::ConstructorTest1(Ishiko::Test& test)
 void NuimePropertySetTests::AddTest1(Ishiko::Test& test)
 {
     NuimePropertySet property_set;
-    property_set.add(NuimeProperty("nuime:code:cpp-include-directories", "../../include"));
+    property_set.add(NuimeProperty("nuime:code:cpp-user-include-directories", "../../include"));
 
     ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties().size(), 1);
-    ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties()[0].name(), "nuime:code:cpp-include-directories");
+    ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties()[0].name(), "nuime:code:cpp-user-include-directories");
     ISHIKO_TEST_FAIL_IF_NEQ(property_set.properties()[0].value(), "../../include");
     ISHIKO_TEST_PASS();
 }

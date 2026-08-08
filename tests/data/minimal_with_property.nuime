@@ -9,7 +9,7 @@ targets:
         inputs:
           - main.cpp
         properties:
-          - name: nuime:code:cpp-include-directories
+          - name: nuime:code:cpp-user-include-directories
             value: ../../include/Ishiko/BasePlatform
     output-groups:
       - outputs:

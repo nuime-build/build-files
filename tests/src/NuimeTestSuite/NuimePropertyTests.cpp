@@ -14,9 +14,9 @@ NuimePropertyTests::NuimePropertyTests(const Ishiko::TestNumber& number, const I
 
 void NuimePropertyTests::ConstructorTest1(Ishiko::Test& test)
 {
-    NuimeProperty property("nuime:code:cpp-include-directories", "../../include");
+    NuimeProperty property("nuime:code:cpp-user-include-directories", "../../include");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(property.name(), "nuime:code:cpp-include-directories");
+    ISHIKO_TEST_FAIL_IF_NEQ(property.name(), "nuime:code:cpp-user-include-directories");
     ISHIKO_TEST_FAIL_IF_NEQ(property.value(), "../../include");
     ISHIKO_TEST_PASS();
 }

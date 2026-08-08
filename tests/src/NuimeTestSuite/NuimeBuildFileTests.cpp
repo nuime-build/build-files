@@ -131,7 +131,7 @@ void NuimeBuildFileTests::LoadTest4(Ishiko::Test& test)
     ISHIKO_TEST_FAIL_IF_NEQ(build_file.recipes()[0].inputGroups().size(), 1);
     const NuimePropertySet& properties = build_file.recipes()[0].inputGroups()[0].properties();
     ISHIKO_TEST_FAIL_IF_NEQ(properties.properties().size(), 1);
-    ISHIKO_TEST_FAIL_IF_NEQ(properties.properties()[0].name(), "nuime:code:cpp-include-directories");
+    ISHIKO_TEST_FAIL_IF_NEQ(properties.properties()[0].name(), "nuime:code:cpp-user-include-directories");
     ISHIKO_TEST_FAIL_IF_NEQ(properties.properties()[0].value(), "../../include/Ishiko/BasePlatform");
     ISHIKO_TEST_PASS();
 }
