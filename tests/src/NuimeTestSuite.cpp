@@ -11,12 +11,14 @@
 #include "NuimeTestSuite/NuimePropertyTests.hpp"
 #include "NuimeTestSuite/NuimePropertySetTests.hpp"
 #include "NuimeTestSuite/NuimeRecipeTests.hpp"
+#include "NuimeTestSuite/NuimeStructuredFilenameTests.hpp"
 #include "NuimeTestSuite/NuimeTargetTests.hpp"
 
 NuimeTestSuite::NuimeTestSuite(const Ishiko::TestNumber& number, const Ishiko::TestContext& context)
     : Ishiko::TestSequence(number, "Nuime test suite", context)
 {
     append<NuimeLabelTests>();
+    append<NuimeStructuredFilenameTests>();
     append<NuimePropertyTests>();
     append<NuimePropertySetTests>();
     append<NuimeInputTests>();
