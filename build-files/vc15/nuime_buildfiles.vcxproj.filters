@@ -83,6 +83,9 @@
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeRecipe.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeStructuredFilename.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeTarget.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -149,6 +152,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Nuime\NuimeRecipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Nuime\NuimeStructuredFilename.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Nuime\NuimeTarget.cpp">
