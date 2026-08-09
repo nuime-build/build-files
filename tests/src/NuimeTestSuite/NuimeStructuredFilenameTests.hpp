@@ -15,6 +15,9 @@ private:
     static void TagConstructorTest1(Ishiko::Test& test);
     static void TagAddValueTest1(Ishiko::Test& test);
     static void ConstructorTest1(Ishiko::Test& test);
+    static void SetPrefixTest1(Ishiko::Test& test);
+    static void AddTagTest1(Ishiko::Test& test);
+    static void ResolveTest1(Ishiko::Test& test);
 };
 
 #endif
