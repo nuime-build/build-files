@@ -18,6 +18,7 @@ private:
     static void LoadTest2(Ishiko::Test& test);
     static void LoadTest3(Ishiko::Test& test);
     static void LoadTest4(Ishiko::Test& test);
+    static void LoadTest5(Ishiko::Test& test);
 };
 
 #endif
