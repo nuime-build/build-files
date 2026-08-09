@@ -23,6 +23,8 @@ namespace Nuime
             const std::vector<std::string>& source_files);
         void writeTargetIncludeDirectoriesCommand(const std::string& target_name, const std::string& scope,
             const std::vector<std::string>& directories);
+        void writeSetTargetPropertiesCommand(const std::string& target_name, const std::string& property_name,
+            const std::string& value);
         void writeCMakeMinimumRequiredCommand(const std::string& version);
         void writeProjectCommand(const std::string& project_name);
         void writeSetCommand(const std::string& variable_name, const std::vector<std::string>& values);

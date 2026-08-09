@@ -22,6 +22,8 @@ CMakeListsWriterTests::CMakeListsWriterTests(const Ishiko::TestNumber& number, c
         WriteTargetIncludeDirectoriesCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeTargetIncludeDirectoriesCommand test 2",
         WriteTargetIncludeDirectoriesCommandTest2);
+    append<Ishiko::HeapAllocationErrorsTest>("writeSetTargetPropertiesCommand test 1",
+        WriteSetTargetPropertiesCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeSetCommand test 1", WriteSetCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeSetCommand test 2", WriteSetCommandTest2);
     append<Ishiko::HeapAllocationErrorsTest>("writeBlankLine test 1", WriteBlankLineTest1);
@@ -168,6 +170,24 @@ void CMakeListsWriterTests::WriteTargetIncludeDirectoriesCommandTest2(Ishiko::Te
 
     writer.writeTargetIncludeDirectoriesCommand("MyLibrary", "PRIVATE",
         {"../../include/Ishiko/BasePlatform", "../../include"});
+
+    writer.close();
+
+    ISHIKO_TEST_FAIL_IF_OUTPUT_AND_REFERENCE_FILES_NEQ(output_name);
+    ISHIKO_TEST_PASS();
+}
+
+void CMakeListsWriterTests::WriteSetTargetPropertiesCommandTest1(Ishiko::Test& test)
+{
+    const char* output_name = "CMakeListsWriterTests_WriteSetTargetPropertiesCommandTest1.txt";
+    const path output_path = test.context().getOutputPath(output_name);
+
+    Ishiko::Error error;
+    CMakeListsWriter writer(output_path, error);
+    ISHIKO_TEST_FAIL_IF(error);
+
+    writer.writeSetTargetPropertiesCommand("MyLibrary", "ARCHIVE_OUTPUT_DIRECTORY",
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../lib");
 
     writer.close();
 

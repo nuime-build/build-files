@@ -81,6 +81,19 @@ void CMakeListsWriter::writeTargetIncludeDirectoriesCommand(const std::string& t
     }
 }
 
+void CMakeListsWriter::writeSetTargetPropertiesCommand(const std::string& target_name,
+    const std::string& property_name, const std::string& value)
+{
+    m_output_file.write("set_target_properties(");
+    m_output_file.write(target_name);
+    m_output_file.writeLine(" PROPERTIES");
+    m_output_file.write("    ");
+    m_output_file.write(property_name);
+    m_output_file.write(" ");
+    m_output_file.write(value);
+    m_output_file.writeLine(")");
+}
+
 void CMakeListsWriter::writeCMakeMinimumRequiredCommand(const std::string& version)
 {
     m_output_file.write("cmake_minimum_required(VERSION ");
