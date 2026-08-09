@@ -16,6 +16,7 @@ NuimeBuildFileTests::NuimeBuildFileTests(const Ishiko::TestNumber& number, const
     append<Ishiko::HeapAllocationErrorsTest>("load test 2", LoadTest2);
     append<Ishiko::HeapAllocationErrorsTest>("load test 3", LoadTest3);
     append<Ishiko::HeapAllocationErrorsTest>("load test 4", LoadTest4);
+    append<Ishiko::HeapAllocationErrorsTest>("load test 5", LoadTest5);
 }
 
 void NuimeBuildFileTests::ConstructorTest1(Ishiko::Test& test)
@@ -133,5 +134,29 @@ void NuimeBuildFileTests::LoadTest4(Ishiko::Test& test)
     ISHIKO_TEST_FAIL_IF_NEQ(properties.properties().size(), 1);
     ISHIKO_TEST_FAIL_IF_NEQ(properties.properties()[0].name(), "nuime:code:cpp-user-include-directories");
     ISHIKO_TEST_FAIL_IF_NEQ(properties.properties()[0].value(), "../../include/Ishiko/BasePlatform");
+    ISHIKO_TEST_PASS();
+}
+
+void NuimeBuildFileTests::LoadTest5(Ishiko::Test& test)
+{
+    boost::filesystem::path input_path = test.context().getDataPath("minimal_with_structured_filename.nuime");
+
+    NuimeBuildFile build_file;
+
+    Ishiko::Error error;
+    build_file.load(input_path, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(build_file.recipes().size(), 1);
+    ISHIKO_TEST_FAIL_IF_NEQ(build_file.recipes()[0].outputGroups().size(), 1);
+    ISHIKO_TEST_FAIL_IF_NEQ(build_file.recipes()[0].outputGroups()[0].outputs().size(), 1);
+    const NuimeOutput& output = build_file.recipes()[0].outputGroups()[0].outputs()[0];
+    ISHIKO_TEST_FAIL_IF_NEQ(output.asString(), "example");
+    ISHIKO_TEST_FAIL_IF_NOT(output.hasFilename());
+    ISHIKO_TEST_FAIL_IF_NEQ(output.filename().prefix(), "lib");
+    ISHIKO_TEST_FAIL_IF_NEQ(output.filename().tags().size(), 2);
+    std::string resolved = output.filename().resolve("example",
+        { { "nuime:configuration", "debug" }, { "nuime:architecture", "x64" } });
+    ISHIKO_TEST_FAIL_IF_NEQ(resolved, "libexample-d-x64");
     ISHIKO_TEST_PASS();
 }

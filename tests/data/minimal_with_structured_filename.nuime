@@ -1,0 +1,23 @@
+%YAML 1.2
+---
+nuime-version: "0.1"
+name: example
+targets:
+  - name: lib
+    input-groups:
+      - inputs:
+          - src/main.cpp
+    output-groups:
+      - outputs:
+          - name: example
+            filename:
+              prefix: lib
+              tags:
+                - axis: nuime:configuration
+                  values:
+                    debug: "-d"
+                    release: ""
+                - axis: nuime:architecture
+                  values:
+                    x86: "-x86"
+                    x64: "-x64"

@@ -184,6 +184,7 @@
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertyTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.cpp" />
+    <ClCompile Include="..\..\src\NuimeTestSuite\NuimeStructuredFilenameTests.cpp" />
     <ClCompile Include="..\..\src\NuimeTestSuite\NuimeTargetTests.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +211,7 @@
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertyTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimePropertySetTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeRecipeTests.hpp" />
+    <ClInclude Include="..\..\src\NuimeTestSuite\NuimeStructuredFilenameTests.hpp" />
     <ClInclude Include="..\..\src\NuimeTestSuite\NuimeTargetTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

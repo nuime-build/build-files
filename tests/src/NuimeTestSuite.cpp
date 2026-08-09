@@ -11,6 +11,7 @@
 #include "NuimeTestSuite/NuimePropertyTests.hpp"
 #include "NuimeTestSuite/NuimePropertySetTests.hpp"
 #include "NuimeTestSuite/NuimeRecipeTests.hpp"
+#include "NuimeTestSuite/NuimeStructuredFilenameTests.hpp"
 #include "NuimeTestSuite/NuimeTargetTests.hpp"
 
 NuimeTestSuite::NuimeTestSuite(const Ishiko::TestNumber& number, const Ishiko::TestContext& context)
@@ -19,6 +20,7 @@ NuimeTestSuite::NuimeTestSuite(const Ishiko::TestNumber& number, const Ishiko::T
     append<NuimeLabelTests>();
     append<NuimePropertyTests>();
     append<NuimePropertySetTests>();
+    append<NuimeStructuredFilenameTests>();
     append<NuimeInputTests>();
     append<NuimeInputGroupTests>();
     append<NuimeOutputTests>();

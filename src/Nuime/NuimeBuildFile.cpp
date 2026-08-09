@@ -6,6 +6,30 @@
 
 using namespace Nuime;
 
+namespace
+{
+
+NuimeStructuredFilename loadStructuredFilename(const YAML::Node& filename_node)
+{
+    NuimeStructuredFilename filename;
+    if (filename_node["prefix"])
+    {
+        filename.setPrefix(filename_node["prefix"].as<std::string>());
+    }
+    for (const auto& tag_node : filename_node["tags"])
+    {
+        NuimeStructuredFilename::Tag tag(tag_node["axis"].as<std::string>());
+        for (const auto& value : tag_node["values"])
+        {
+            tag.addValue(value.first.as<std::string>(), value.second.as<std::string>());
+        }
+        filename.addTag(tag);
+    }
+    return filename;
+}
+
+}
+
 NuimeBuildFile::NuimeBuildFile()
 {
 }
@@ -85,9 +109,23 @@ void NuimeBuildFile::load(const boost::filesystem::path& path, Ishiko::Error& er
                 {
                     output_group.setBase(group_node["base"].as<std::string>());
                 }
-                for (const auto& output : group_node["outputs"])
+                for (const auto& output_node : group_node["outputs"])
                 {
-                    output_group.addOutput(NuimeOutput(output.as<std::string>()));
+                    // An output is either a bare string (the name, with default tool naming) or a map
+                    // with a name and an optional structured filename layout.
+                    if (output_node.IsScalar())
+                    {
+                        output_group.addOutput(NuimeOutput(output_node.as<std::string>()));
+                    }
+                    else
+                    {
+                        NuimeOutput output(output_node["name"].as<std::string>());
+                        if (output_node["filename"])
+                        {
+                            output.setFilename(loadStructuredFilename(output_node["filename"]));
+                        }
+                        output_group.addOutput(output);
+                    }
                 }
                 output_groups.push_back(output_group);
             }
