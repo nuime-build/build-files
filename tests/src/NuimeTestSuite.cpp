@@ -18,9 +18,9 @@ NuimeTestSuite::NuimeTestSuite(const Ishiko::TestNumber& number, const Ishiko::T
     : Ishiko::TestSequence(number, "Nuime test suite", context)
 {
     append<NuimeLabelTests>();
-    append<NuimeStructuredFilenameTests>();
     append<NuimePropertyTests>();
     append<NuimePropertySetTests>();
+    append<NuimeStructuredFilenameTests>();
     append<NuimeInputTests>();
     append<NuimeInputGroupTests>();
     append<NuimeOutputTests>();

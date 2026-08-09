@@ -12,9 +12,9 @@ public:
     NuimeStructuredFilenameTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void ConstructorTest1(Ishiko::Test& test);
     static void TagConstructorTest1(Ishiko::Test& test);
     static void TagAddValueTest1(Ishiko::Test& test);
+    static void ConstructorTest1(Ishiko::Test& test);
 };
 
 #endif
