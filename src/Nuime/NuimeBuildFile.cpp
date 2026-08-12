@@ -73,6 +73,14 @@ void NuimeBuildFile::load(const boost::filesystem::path& path, Ishiko::Error& er
                 target.addLabel(NuimeLabel(label.as<std::string>()));
             }
 
+            for (const auto& dependency_node : target_node["build-dependencies"])
+            {
+                const YAML::Node& target_ref_node = dependency_node["target-ref"];
+                target.addBuildDependency(NuimeBuildDependency(dependency_node["name"].as<std::string>(),
+                    target_ref_node["location"]["url"].as<std::string>(),
+                    target_ref_node["name"].as<std::string>()));
+            }
+
             std::vector<NuimeInputGroup> input_groups;
             for (const auto& group_node : target_node["input-groups"])
             {
