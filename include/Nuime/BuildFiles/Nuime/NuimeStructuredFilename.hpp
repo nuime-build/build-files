@@ -16,7 +16,7 @@ namespace Nuime
     class NuimeStructuredFilename
     {
     public:
-        // A single tag in the layout. It is bound to an axis (e.g. "nuime:configuration") and holds the
+        // A single tag in the layout. It is bound to an axis (e.g. "nuime:code:configuration") and holds the
         // string contributed to the name for each value of that axis (e.g. debug -> "-d"). Both the axis
         // and the values are opaque strings; how an axis resolves at build time is the writer's concern.
         class Tag
@@ -40,8 +40,8 @@ namespace Nuime
         const std::vector<Tag>& tags() const;
         void addTag(const Tag& tag);
 
-        // Composes the name for a concrete set of axis values (e.g. {nuime:configuration: "debug",
-        // nuime:architecture: "x64"} -> "<prefix><stem>-d-x64"). Backend-agnostic; the platform extension
+        // Composes the name for a concrete set of axis values (e.g. {nuime:code:configuration: "debug",
+        // nuime:code:architecture: "x64"} -> "<prefix><stem>-d-x64"). Backend-agnostic; the platform extension
         // is added by the tool. Used by paths that build or export with the axes already resolved.
         std::string resolve(const std::string& stem,
             const std::map<std::string, std::string>& axis_values) const;

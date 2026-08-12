@@ -54,8 +54,7 @@ library nuime_buildfiles : IshikoUUIDs, IshikoTidyYAML, IshikoFileSystem, Ishiko
         ../../include/Nuime/BuildFiles/Nuime/NuimeInput.hpp
         ../../include/Nuime/BuildFiles/Nuime/NuimeInputGroup.hpp
         ../../include/Nuime/BuildFiles/Nuime/NuimeLabel.hpp
-        ../../include/Nuime/BuildFiles/Nuime/NuimeWellKnownLabels.hpp
-        ../../include/Nuime/BuildFiles/Nuime/NuimeWellKnownProperties.hpp
+        ../../include/Nuime/BuildFiles/Nuime/NuimeWellKnownStrings.hpp
         ../../include/Nuime/BuildFiles/Nuime/NuimeOutput.hpp
         ../../include/Nuime/BuildFiles/Nuime/NuimeOutputGroup.hpp
         ../../include/Nuime/BuildFiles/Nuime/NuimeProperty.hpp
@@ -85,8 +84,7 @@ library nuime_buildfiles : IshikoUUIDs, IshikoTidyYAML, IshikoFileSystem, Ishiko
         ../../src/Nuime/NuimeOutputGroup.cpp
         ../../src/Nuime/NuimeProperty.cpp
         ../../src/Nuime/NuimePropertySet.cpp
-        ../../src/Nuime/NuimeWellKnownLabels.cpp
-        ../../src/Nuime/NuimeWellKnownProperties.cpp
+        ../../src/Nuime/NuimeWellKnownStrings.cpp
         ../../src/Nuime/NuimeRecipe.cpp
         ../../src/Nuime/NuimeStructuredFilename.cpp
         ../../src/Nuime/NuimeTarget.cpp
