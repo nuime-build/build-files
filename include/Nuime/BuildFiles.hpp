@@ -14,6 +14,7 @@
 #include "BuildFiles/linkoptions.hpp"
 #include "BuildFiles/MSBuild/MSBuildFiltersFile.hpp"
 #include "BuildFiles/MSBuild/MSBuildProjectFile.hpp"
+#include "BuildFiles/Nuime/NuimeBuildDependency.hpp"
 #include "BuildFiles/Nuime/NuimeBuildFile.hpp"
 #include "BuildFiles/Nuime/NuimeInput.hpp"
 #include "BuildFiles/Nuime/NuimeInputGroup.hpp"
