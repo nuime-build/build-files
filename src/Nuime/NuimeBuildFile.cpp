@@ -9,7 +9,7 @@ using namespace Nuime;
 namespace
 {
 
-NuimeStructuredFilename loadStructuredFilename(const YAML::Node& filename_node)
+NuimeStructuredFilename LoadStructuredFilename(const YAML::Node& filename_node)
 {
     NuimeStructuredFilename filename;
     if (filename_node["prefix"])
@@ -122,7 +122,7 @@ void NuimeBuildFile::load(const boost::filesystem::path& path, Ishiko::Error& er
                         NuimeOutput output(output_node["name"].as<std::string>());
                         if (output_node["filename"])
                         {
-                            output.setFilename(loadStructuredFilename(output_node["filename"]));
+                            output.setFilename(LoadStructuredFilename(output_node["filename"]));
                         }
                         output_group.addOutput(output);
                     }
