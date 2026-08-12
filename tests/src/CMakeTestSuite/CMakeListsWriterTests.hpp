@@ -24,6 +24,7 @@ private:
     static void WriteSetTargetPropertiesCommandTest1(Ishiko::Test& test);
     static void WriteSetCommandTest1(Ishiko::Test& test);
     static void WriteSetCommandTest2(Ishiko::Test& test);
+    static void WriteStringSwitchCommandTest1(Ishiko::Test& test);
     static void WriteBlankLineTest1(Ishiko::Test& test);
 };
 
