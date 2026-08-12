@@ -50,6 +50,9 @@
     <ClInclude Include="..\..\include\Nuime\BuildFiles\MSBuild\MSBuildFiltersFile.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeBuildDependency.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeBuildFile.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -116,6 +119,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\MSBuild\MSBuildFiltersFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Nuime\NuimeBuildDependency.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Nuime\NuimeBuildFile.cpp">

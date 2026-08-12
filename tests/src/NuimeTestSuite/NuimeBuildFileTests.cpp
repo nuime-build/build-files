@@ -17,6 +17,7 @@ NuimeBuildFileTests::NuimeBuildFileTests(const Ishiko::TestNumber& number, const
     append<Ishiko::HeapAllocationErrorsTest>("load test 3", LoadTest3);
     append<Ishiko::HeapAllocationErrorsTest>("load test 4", LoadTest4);
     append<Ishiko::HeapAllocationErrorsTest>("load test 5", LoadTest5);
+    append<Ishiko::HeapAllocationErrorsTest>("load test 6", LoadTest6);
 }
 
 void NuimeBuildFileTests::ConstructorTest1(Ishiko::Test& test)
@@ -158,5 +159,26 @@ void NuimeBuildFileTests::LoadTest5(Ishiko::Test& test)
     std::string resolved = output.filename().resolve("example",
         { { "nuime:code:configuration", "debug" }, { "nuime:code:architecture", "x64" } });
     ISHIKO_TEST_FAIL_IF_NEQ(resolved, "libexample-d-x64");
+    ISHIKO_TEST_PASS();
+}
+
+void NuimeBuildFileTests::LoadTest6(Ishiko::Test& test)
+{
+    boost::filesystem::path input_path = test.context().getDataPath("minimal_with_dependency.nuime");
+
+    NuimeBuildFile build_file;
+
+    Ishiko::Error error;
+    build_file.load(input_path, error);
+
+    ISHIKO_TEST_FAIL_IF(error);
+    ISHIKO_TEST_FAIL_IF_NEQ(build_file.recipes().size(), 1);
+    const NuimeTarget& target = build_file.recipes()[0].target();
+    ISHIKO_TEST_FAIL_IF_NEQ(target.buildDependencies().size(), 1);
+    const NuimeBuildDependency& dependency = target.buildDependencies()[0];
+    ISHIKO_TEST_FAIL_IF_NEQ(dependency.name(), "IshikoBasePlatform");
+    ISHIKO_TEST_FAIL_IF_NEQ(dependency.url(),
+        "https://github.com/ishiko-cpp/base-platform/build-files/nuime/ishiko_baseplatform.nuime");
+    ISHIKO_TEST_FAIL_IF_NEQ(dependency.targetName(), "lib");
     ISHIKO_TEST_PASS();
 }

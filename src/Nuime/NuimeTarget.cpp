@@ -36,3 +36,13 @@ bool NuimeTarget::hasLabel(const std::string& label) const
     }
     return false;
 }
+
+const std::vector<NuimeBuildDependency>& NuimeTarget::buildDependencies() const
+{
+    return m_build_dependencies;
+}
+
+void NuimeTarget::addBuildDependency(const NuimeBuildDependency& dependency)
+{
+    m_build_dependencies.push_back(dependency);
+}

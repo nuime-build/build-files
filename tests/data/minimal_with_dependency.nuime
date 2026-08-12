@@ -1,0 +1,18 @@
+%YAML 1.2
+---
+nuime-version: "0.1"
+name: example
+targets:
+  - name: lib
+    build-dependencies:
+      - name: IshikoBasePlatform
+        target-ref:
+          location:
+            url: https://github.com/ishiko-cpp/base-platform/build-files/nuime/ishiko_baseplatform.nuime
+          name: lib
+    input-groups:
+      - inputs:
+          - src/main.cpp
+    output-groups:
+      - outputs:
+          - example
