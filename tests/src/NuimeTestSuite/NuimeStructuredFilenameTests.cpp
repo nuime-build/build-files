@@ -20,16 +20,16 @@ NuimeStructuredFilenameTests::NuimeStructuredFilenameTests(const Ishiko::TestNum
 
 void NuimeStructuredFilenameTests::TagConstructorTest1(Ishiko::Test& test)
 {
-    NuimeStructuredFilename::Tag tag("nuime:configuration");
+    NuimeStructuredFilename::Tag tag("nuime:code:configuration");
 
-    ISHIKO_TEST_FAIL_IF_NEQ(tag.axis(), "nuime:configuration");
+    ISHIKO_TEST_FAIL_IF_NEQ(tag.axis(), "nuime:code:configuration");
     ISHIKO_TEST_FAIL_IF_NEQ(tag.values().size(), 0);
     ISHIKO_TEST_PASS();
 }
 
 void NuimeStructuredFilenameTests::TagAddValueTest1(Ishiko::Test& test)
 {
-    NuimeStructuredFilename::Tag tag("nuime:configuration");
+    NuimeStructuredFilename::Tag tag("nuime:code:configuration");
     tag.addValue("debug", "-d");
     tag.addValue("release", "");
 
@@ -60,12 +60,12 @@ void NuimeStructuredFilenameTests::SetPrefixTest1(Ishiko::Test& test)
 void NuimeStructuredFilenameTests::AddTagTest1(Ishiko::Test& test)
 {
     NuimeStructuredFilename filename;
-    NuimeStructuredFilename::Tag tag("nuime:configuration");
+    NuimeStructuredFilename::Tag tag("nuime:code:configuration");
     tag.addValue("debug", "-d");
     filename.addTag(tag);
 
     ISHIKO_TEST_FAIL_IF_NEQ(filename.tags().size(), 1);
-    ISHIKO_TEST_FAIL_IF_NEQ(filename.tags()[0].axis(), "nuime:configuration");
+    ISHIKO_TEST_FAIL_IF_NEQ(filename.tags()[0].axis(), "nuime:code:configuration");
     ISHIKO_TEST_FAIL_IF_NEQ(filename.tags()[0].values().at("debug"), "-d");
     ISHIKO_TEST_PASS();
 }
@@ -75,22 +75,22 @@ void NuimeStructuredFilenameTests::ResolveTest1(Ishiko::Test& test)
     NuimeStructuredFilename filename;
     filename.setPrefix("lib");
 
-    NuimeStructuredFilename::Tag configuration("nuime:configuration");
+    NuimeStructuredFilename::Tag configuration("nuime:code:configuration");
     configuration.addValue("debug", "-d");
     configuration.addValue("release", "");
     filename.addTag(configuration);
 
-    NuimeStructuredFilename::Tag architecture("nuime:architecture");
+    NuimeStructuredFilename::Tag architecture("nuime:code:architecture");
     architecture.addValue("x86", "-x86");
     architecture.addValue("x64", "-x64");
     filename.addTag(architecture);
 
     std::string debug_x64 = filename.resolve("ishiko_baseplatform",
-        { { "nuime:configuration", "debug" }, { "nuime:architecture", "x64" } });
+        { { "nuime:code:configuration", "debug" }, { "nuime:code:architecture", "x64" } });
     ISHIKO_TEST_FAIL_IF_NEQ(debug_x64, "libishiko_baseplatform-d-x64");
 
     std::string release_x86 = filename.resolve("ishiko_baseplatform",
-        { { "nuime:configuration", "release" }, { "nuime:architecture", "x86" } });
+        { { "nuime:code:configuration", "release" }, { "nuime:code:architecture", "x86" } });
     ISHIKO_TEST_FAIL_IF_NEQ(release_x86, "libishiko_baseplatform-x86");
 
     ISHIKO_TEST_PASS();

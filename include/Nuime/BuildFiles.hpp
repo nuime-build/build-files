@@ -25,8 +25,7 @@
 #include "BuildFiles/Nuime/NuimeRecipe.hpp"
 #include "BuildFiles/Nuime/NuimeStructuredFilename.hpp"
 #include "BuildFiles/Nuime/NuimeTarget.hpp"
-#include "BuildFiles/Nuime/NuimeWellKnownLabels.hpp"
-#include "BuildFiles/Nuime/NuimeWellKnownProperties.hpp"
+#include "BuildFiles/Nuime/NuimeWellKnownStrings.hpp"
 #include "BuildFiles/VisualStudio/VisualStudioSolutionFile.hpp"
 
 #endif

@@ -171,8 +171,7 @@
     <ClCompile Include="..\..\src\Nuime\NuimeOutputGroup.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeProperty.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimePropertySet.cpp" />
-    <ClCompile Include="..\..\src\Nuime\NuimeWellKnownLabels.cpp" />
-    <ClCompile Include="..\..\src\Nuime\NuimeWellKnownProperties.cpp" />
+    <ClCompile Include="..\..\src\Nuime\NuimeWellKnownStrings.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeRecipe.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeStructuredFilename.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeTarget.cpp" />
@@ -194,8 +193,7 @@
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeInput.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeInputGroup.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeLabel.hpp" />
-    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeWellKnownLabels.hpp" />
-    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeWellKnownProperties.hpp" />
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeWellKnownStrings.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeOutput.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeOutputGroup.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeProperty.hpp" />
