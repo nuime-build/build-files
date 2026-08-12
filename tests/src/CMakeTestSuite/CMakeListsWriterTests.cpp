@@ -26,6 +26,7 @@ CMakeListsWriterTests::CMakeListsWriterTests(const Ishiko::TestNumber& number, c
         WriteSetTargetPropertiesCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeSetCommand test 1", WriteSetCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeSetCommand test 2", WriteSetCommandTest2);
+    append<Ishiko::HeapAllocationErrorsTest>("writeStringSwitchCommand test 1", WriteStringSwitchCommandTest1);
     append<Ishiko::HeapAllocationErrorsTest>("writeBlankLine test 1", WriteBlankLineTest1);
 }
 
@@ -222,6 +223,24 @@ void CMakeListsWriterTests::WriteSetCommandTest2(Ishiko::Test& test)
     ISHIKO_TEST_FAIL_IF(error);
 
     writer.writeSetCommand("SOURCE_FILES", {"source1.cpp", "source2.cpp"});
+
+    writer.close();
+
+    ISHIKO_TEST_FAIL_IF_OUTPUT_AND_REFERENCE_FILES_NEQ(output_name);
+    ISHIKO_TEST_PASS();
+}
+
+void CMakeListsWriterTests::WriteStringSwitchCommandTest1(Ishiko::Test& test)
+{
+    const char* output_name = "CMakeListsWriterTests_WriteStringSwitchCommandTest1.txt";
+    const path output_path = test.context().getOutputPath(output_name);
+
+    Ishiko::Error error;
+    CMakeListsWriter writer(output_path, error);
+    ISHIKO_TEST_FAIL_IF(error);
+
+    writer.writeStringSwitchCommand("NUIME_ARCH_TAG", "CMAKE_VS_PLATFORM_NAME",
+        {{"x64", "-x64"}, {"Win32", "-x86"}});
 
     writer.close();
 

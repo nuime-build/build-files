@@ -88,6 +88,32 @@ void CMakeListsWriter::writeSetTargetPropertiesCommand(const std::string& target
         { property_name + " " + value });
 }
 
+void CMakeListsWriter::writeStringSwitchCommand(const std::string& variable, const std::string& selector,
+    const std::vector<std::pair<std::string, std::string>>& cases)
+{
+    if (cases.empty())
+    {
+        return;
+    }
+
+    bool first = true;
+    for (const std::pair<std::string, std::string>& one_case : cases)
+    {
+        m_output_file.write(first ? "if(" : "elseif(");
+        m_output_file.write(selector);
+        m_output_file.write(" STREQUAL \"");
+        m_output_file.write(one_case.first);
+        m_output_file.writeLine("\")");
+        m_output_file.write("    set(");
+        m_output_file.write(variable);
+        m_output_file.write(" \"");
+        m_output_file.write(one_case.second);
+        m_output_file.writeLine("\")");
+        first = false;
+    }
+    m_output_file.writeLine("endif()");
+}
+
 void CMakeListsWriter::writeTargetIncludeDirectoriesCommand(const std::string& target_name,
     const std::string& scope, const std::vector<std::string>& directories)
 {

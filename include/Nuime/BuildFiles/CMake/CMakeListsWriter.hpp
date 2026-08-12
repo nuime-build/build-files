@@ -8,6 +8,7 @@
 #include <Ishiko/Errors.hpp>
 #include <Ishiko/FileSystem.hpp>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace Nuime
@@ -27,6 +28,10 @@ namespace Nuime
         void writeSetCommand(const std::string& variable_name, const std::vector<std::string>& values);
         void writeSetTargetPropertiesCommand(const std::string& target_name, const std::string& property_name,
             const std::string& value);
+        // Writes an if/elseif chain that sets `variable` to the value paired with the first `selector`
+        // value that matches, e.g. if(<selector> STREQUAL "<match>") set(<variable> "<value>") ...
+        void writeStringSwitchCommand(const std::string& variable, const std::string& selector,
+            const std::vector<std::pair<std::string, std::string>>& cases);
         void writeTargetIncludeDirectoriesCommand(const std::string& target_name, const std::string& scope,
             const std::vector<std::string>& directories);
 
