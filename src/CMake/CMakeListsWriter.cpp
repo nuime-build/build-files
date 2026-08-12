@@ -11,7 +11,7 @@ namespace
 // Writes a CMake command: the command name, its opening parenthesis, the header arguments that sit on
 // the same line, then each of the remaining arguments indented on its own line with the closing
 // parenthesis on a line of its own. With no indented arguments it collapses to "<command>(<header>)".
-void writeCommand(Ishiko::TextFile& output_file, const std::string& command, const std::string& header,
+void WriteCommand(Ishiko::TextFile& output_file, const std::string& command, const std::string& header,
     const std::vector<std::string>& arguments)
 {
     output_file.write(command);
@@ -48,13 +48,13 @@ void CMakeListsWriter::close()
 void CMakeListsWriter::writeAddExecutableCommand(const std::string& executable_name,
     const std::vector<std::string>& source_files)
 {
-    writeCommand(m_output_file, "add_executable", executable_name, source_files);
+    WriteCommand(m_output_file, "add_executable", executable_name, source_files);
 }
 
 void CMakeListsWriter::writeAddLibraryCommand(const std::string& library_name,
     const std::vector<std::string>& source_files)
 {
-    writeCommand(m_output_file, "add_library", library_name + " STATIC", source_files);
+    WriteCommand(m_output_file, "add_library", library_name + " STATIC", source_files);
 }
 
 void CMakeListsWriter::writeBlankLine()
@@ -78,13 +78,13 @@ void CMakeListsWriter::writeProjectCommand(const std::string& project_name)
 
 void CMakeListsWriter::writeSetCommand(const std::string& variable_name, const std::vector<std::string>& values)
 {
-    writeCommand(m_output_file, "set", variable_name, values);
+    WriteCommand(m_output_file, "set", variable_name, values);
 }
 
 void CMakeListsWriter::writeSetTargetPropertiesCommand(const std::string& target_name,
     const std::string& property_name, const std::string& value)
 {
-    writeCommand(m_output_file, "set_target_properties", target_name + " PROPERTIES",
+    WriteCommand(m_output_file, "set_target_properties", target_name + " PROPERTIES",
         { property_name + " " + value });
 }
 
@@ -117,5 +117,5 @@ void CMakeListsWriter::writeStringSwitchCommand(const std::string& variable, con
 void CMakeListsWriter::writeTargetIncludeDirectoriesCommand(const std::string& target_name,
     const std::string& scope, const std::vector<std::string>& directories)
 {
-    writeCommand(m_output_file, "target_include_directories", target_name + " " + scope, directories);
+    WriteCommand(m_output_file, "target_include_directories", target_name + " " + scope, directories);
 }
