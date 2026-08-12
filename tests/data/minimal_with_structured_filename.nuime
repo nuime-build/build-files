@@ -13,11 +13,11 @@ targets:
             filename:
               prefix: lib
               tags:
-                - axis: nuime:configuration
+                - axis: nuime:code:configuration
                   values:
                     debug: "-d"
                     release: ""
-                - axis: nuime:architecture
+                - axis: nuime:code:architecture
                   values:
                     x86: "-x86"
                     x64: "-x64"

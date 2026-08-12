@@ -156,7 +156,7 @@ void NuimeBuildFileTests::LoadTest5(Ishiko::Test& test)
     ISHIKO_TEST_FAIL_IF_NEQ(output.filename().prefix(), "lib");
     ISHIKO_TEST_FAIL_IF_NEQ(output.filename().tags().size(), 2);
     std::string resolved = output.filename().resolve("example",
-        { { "nuime:configuration", "debug" }, { "nuime:architecture", "x64" } });
+        { { "nuime:code:configuration", "debug" }, { "nuime:code:architecture", "x64" } });
     ISHIKO_TEST_FAIL_IF_NEQ(resolved, "libexample-d-x64");
     ISHIKO_TEST_PASS();
 }
