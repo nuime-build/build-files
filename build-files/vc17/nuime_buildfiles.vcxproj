@@ -163,6 +163,7 @@
     <ClCompile Include="..\..\src\CMake\CMakeListsWriter.cpp" />
     <ClCompile Include="..\..\src\MSBuild\MSBuildProjectFile.cpp" />
     <ClCompile Include="..\..\src\MSBuild\MSBuildFiltersFile.cpp" />
+    <ClCompile Include="..\..\src\Nuime\NuimeBuildDependency.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeBuildFile.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeInput.cpp" />
     <ClCompile Include="..\..\src\Nuime\NuimeInputGroup.cpp" />
@@ -189,6 +190,7 @@
     <ClInclude Include="..\..\include\Nuime\BuildFiles\CMake\CMakeListsWriter.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\MSBuild\MSBuildProjectFile.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\MSBuild\MSBuildFiltersFile.hpp" />
+    <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeBuildDependency.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeBuildFile.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeInput.hpp" />
     <ClInclude Include="..\..\include\Nuime\BuildFiles\Nuime\NuimeInputGroup.hpp" />
